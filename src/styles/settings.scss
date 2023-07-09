@@ -1,0 +1,100 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+// @use 'vuetify/settings' with (
+//   $color-pack: false
+// );
+
+@font-face {
+  font-family: "Neonderthaw";
+  src: url("./fonts/Neonderthaw-Regular.ttf");
+}
+
+.neonText {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  font-family: Neonderthaw !important;
+}
+
+.scroll-float-button {
+  position: absolute;
+  top: 10%;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(black, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(black, 0);
+  }
+}
+
+// xs
+@media only screen and (max-width: 600px) {
+  .search-textfield {
+    width: 75% !important;
+  }
+  .scroll-float-button {
+    left: 42%;
+  }
+}
+// sm
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+  .search-textfield {
+    width: 75% !important;
+  }
+  .scroll-float-button {
+    left: 46%;
+  }
+}
+// md
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
+  .search-textfield {
+    width: 50% !important;
+  }
+  .scroll-float-button {
+    left: 46%;
+  }
+}
+// lg
+@media only screen and (min-width: 1280px) and (max-width: 1920px) {
+  .search-textfield {
+    width: 50% !important;
+  }
+  .scroll-float-button {
+    left: 46%;
+  }
+}
+// xl
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  .search-textfield {
+    width: 50% !important;
+  }
+  .scroll-float-button {
+    left: 46%;
+  }
+}
+// xxl
+@media only screen and (min-width: 2560px) {
+  .search-textfield {
+    width: 50% !important;
+  }
+  .scroll-float-button {
+    left: 46%;
+  }
+}

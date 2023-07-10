@@ -13,7 +13,8 @@ export const useAppStore = defineStore("app", {
   state: () => ({
     cocktailsByIngredient: [],
     cocktailsByName: [],
-    cocktailsImages: []
+    cocktailsImages: [],
+    cocktailsArr: [],
   }),
 
   actions: {
@@ -26,7 +27,7 @@ export const useAppStore = defineStore("app", {
           params: { ingredients: ingredient },
         })
         .then((response) => {
-          // console.log(response);
+          console.log(response);
           this.cocktailsByIngredient = response.data;
         });
     },
@@ -39,21 +40,21 @@ export const useAppStore = defineStore("app", {
           params: { name: name },
         })
         .then((response) => {
-          // console.log(response);
-          this.cocktailsByIngredient = response.data;
+          console.log(response);
+          this.cocktailsByName = response.data;
         });
     },
-    getCocktailImages() {
+    getCocktailImages(query: String) {
       api.search
         .getPhotos({
-          query: "long island iced tea cocktail",
+          query: query,
           page: 1,
-          perPage: 10,
+          perPage: 1,
           orderBy: "relevant",
           contentFilter: "high"
         })
         .then((result) => {
-          console.log(result.response?.results);
+          // console.log(result.response?.results);
           this.setCocktailImages(result.response?.results);
         });
     },

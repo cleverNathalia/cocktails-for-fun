@@ -3,8 +3,8 @@
   <v-row>
     <v-col cols="12">
       <v-img
-        :src="`./src/assets/cocktails.jpg`"
-        :lazy-src="`./src/assets/cocktails.jpg`"
+        src="/cocktails.jpg"
+        lazy-src="/cocktails.jpg"
         cover
         class="d-flex align-end elevation-8"
       >

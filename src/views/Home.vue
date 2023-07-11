@@ -37,15 +37,20 @@
       </v-responsive>
     </v-col>
   </v-row>
-  <v-row v-if="appStore.cocktailsByIngredient.length == 0 || appStore.cocktailsByName.length == 0">
+  <v-row
+    v-if="
+      appStore.cocktailsByIngredient.length == 0 ||
+      appStore.cocktailsByName.length == 0
+    "
+    class="py-3"
+  >
     <v-col cols="12" class="d-flex justify-center">
-      <v-icon icon="mdi-glass-cocktail" size="x-large" color="grey-darken-1">
+      <v-icon icon="mdi-glass-cocktail" size="50" color="grey-darken-1">
       </v-icon>
-      <v-icon icon="mdi-glass-flute" size="x-large" color="grey-darken-1">
-      </v-icon>
+      <v-icon icon="mdi-glass-flute" size="50" color="grey-darken-1"> </v-icon>
     </v-col>
     <v-col cols="12" class="d-flex justify-center">
-      <div style="font-family: Tiltneon !important; color: grey;">
+      <div style="font-family: Tiltneon !important; color: grey">
         No Cocktails Yet
       </div>
     </v-col>
@@ -69,7 +74,7 @@
         <v-card-item>
           <v-card-text>
             <v-row>
-              <v-col cols="6">
+              <v-col class="d-flex justify-center" xxl="6" xl="6" lg="6" md="6" sm="12" xs="12">
                 <v-img
                   :src="appStore.cocktailsImages[0].urls.regular"
                   :lazy-src="appStore.cocktailsImages[0].urls.regular"
@@ -78,7 +83,7 @@
                 >
                 </v-img>
               </v-col>
-              <v-col cols="6" class="d-flex justify-start">
+              <v-col xxl="6" xl="6" lg="6" md="6" sm="12" xs="12" class="d-flex justify-start">
                 <v-card-text>
                   <v-card-title class="text-h5 font-weight-regular">
                     {{ cocktail.name }}
@@ -127,7 +132,7 @@
         <v-card-item>
           <v-card-text>
             <v-row>
-              <v-col cols="6">
+              <v-col class="d-flex justify-center" xxl="6" xl="6" lg="6" md="6" sm="12" xs="12">
                 <v-img
                   :src="appStore.cocktailsImages[0].urls.regular"
                   :lazy-src="appStore.cocktailsImages[0].urls.regular"
@@ -136,7 +141,7 @@
                 >
                 </v-img>
               </v-col>
-              <v-col cols="6">
+              <v-col xxl="6" xl="6" lg="6" md="6" sm="12" xs="12">
                 <v-card-text>
                   <v-card-title class="text-h5 font-weight-regular">
                     {{ cocktail.name }}
@@ -256,23 +261,22 @@ export default defineComponent({
   data: () => ({
     appStore: useAppStore(),
     searchValue: "",
-    isIconAlt: true
+    isIconAlt: true,
   }),
   methods: {
     getCocktails() {
       this.appStore.getCocktailsIngredientApi(this.searchValue);
       this.appStore.getCocktailsNameApi(this.searchValue);
       // this.appStore.getCocktailImages(this.searchValue);
-      this.appStore.getCocktailImages("vodka");
+      let amount =
+        this.appStore.cocktailsByIngredient.length +
+        this.appStore.cocktailsByName.length;
+      this.appStore.getCocktailImages(this.searchValue);
     },
   },
 });
 </script>
 
 <style>
-.rounded-img {
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-}
+
 </style>

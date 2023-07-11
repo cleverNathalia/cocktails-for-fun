@@ -57,6 +57,11 @@
   .scroll-float-button {
     left: 42%;
   }
+  .rounded-img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
 }
 // sm
 @media only screen and (min-width: 600px) and (max-width: 960px) {
@@ -65,6 +70,11 @@
   }
   .scroll-float-button {
     left: 46%;
+  }
+  .rounded-img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
   }
 }
 // md
@@ -75,6 +85,11 @@
   .scroll-float-button {
     left: 46%;
   }
+  .rounded-img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+  }
 }
 // lg
 @media only screen and (min-width: 1280px) and (max-width: 1920px) {
@@ -83,6 +98,11 @@
   }
   .scroll-float-button {
     left: 46%;
+  }
+  .rounded-img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
   }
 }
 // xl
@@ -93,6 +113,11 @@
   .scroll-float-button {
     left: 46%;
   }
+  .rounded-img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+  }
 }
 // xxl
 @media only screen and (min-width: 2560px) {
@@ -101,5 +126,10 @@
   }
   .scroll-float-button {
     left: 46%;
+  }
+  .rounded-img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
   }
 }

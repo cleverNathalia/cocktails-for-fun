@@ -13,7 +13,7 @@ export const useAppStore = defineStore("app", {
   state: () => ({
     cocktailsByIngredient: [] as any[],
     cocktailsByName: [] as any[],
-    cocktailsImages: [] as any[],
+    cocktailsImages: {} as any,
     cocktailsArr: [] as any[],
   }),
 
@@ -27,8 +27,11 @@ export const useAppStore = defineStore("app", {
           params: { ingredients: ingredient },
         })
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
           this.cocktailsByIngredient = response.data;
+          this.cocktailsByIngredient.forEach(cocktail => {
+            this.getCocktailImages(cocktail.name)
+          })
         });
     },
     getCocktailsNameApi(name: String) {
@@ -45,17 +48,19 @@ export const useAppStore = defineStore("app", {
         });
     },
     getCocktailImages(query: string) {
+      let searchString = query + ' "cocktail"'
+      console.log('searchString:', searchString)
       api.search
         .getPhotos({
-          query: query,
+          query: searchString,
           page: 1,
-          perPage: 1,
+          perPage: 3,
           orderBy: "relevant",
           contentFilter: "high"
         })
         .then((result) => {
-          console.log(result.response?.results);
-          this.setCocktailImages(result.response?.results as any[]);
+          console.log(`getCocktailImages for ${query}:`, result.response?.results);
+          this.cocktailsImages[query] = result.response?.results[0].urls.regular
         });
     },
     setCocktailImages(cocktailsArr: any[]){

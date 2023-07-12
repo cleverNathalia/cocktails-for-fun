@@ -62,6 +62,10 @@
     height: 200px;
     width: 200px;
   }
+  .card-title-size{
+    font-size: 1.875em !important;
+    text-transform: uppercase !important;
+  }
 }
 // sm
 @media only screen and (min-width: 600px) and (max-width: 960px) {
@@ -73,8 +77,8 @@
   }
   .rounded-img {
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
   }
 }
 // md
@@ -101,8 +105,8 @@
   }
   .rounded-img {
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
   }
 }
 // xl
@@ -115,8 +119,8 @@
   }
   .rounded-img {
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
   }
 }
 // xxl
@@ -129,7 +133,7 @@
   }
   .rounded-img {
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
   }
 }
